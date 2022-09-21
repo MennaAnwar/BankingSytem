@@ -1,0 +1,139 @@
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  background: var(--bg-color);
+}
+
+.hero {
+  display: block;
+  box-sizing: border-box;
+  height: 500px;
+  background-color: var(--bg-color);
+  clip-path: ellipse(81% 100% at 50% 0%);
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 3vw;
+  font-weight: 700;
+  line-height: 56px;
+  color: var(--text-color);
+  text-transform: uppercase;
+  position: relative;
+}
+
+#hero span#bank {
+  position: relative;
+  padding: 0px 20px;
+  color: #ffe382;
+  white-space: nowrap;
+}
+
+span#line {
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  background: var(--bg-color);
+  border-left: 2px solid #fb9c05;
+  animation: delete 3s infinite;
+}
+
+@keyframes delete {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+p.sub-heading {
+  color: var(--subheading);
+  padding: 0 10px;
+  font-family: var(--secondary-font);
+  font-weight: 500;
+
+}
+
+@media (max-width: 991px) {
+  #hero {
+    text-align: center;
+    padding: 0;
+  }
+
+  #hero .hero-img img {
+    width: 50%;
+  }
+
+  p.sub-heading.description.vision-section {
+    color: var(--text-color);
+  }
+
+  .header .logo img {
+    max-height: 5vh;
+  }
+
+  span.logo-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero .hero-img img {
+    width: 80%;
+  }
+}
+
+.client-name a {
+  cursor: pointer;
+  text-decoration: none;
+  color:#000;
+}
+
+.welcome {
+  height: 45vh;
+}
+
+.table-scroll {
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.view {
+  color: #de6c35;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  background: #f9f9f9;
+  direction: ltr;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding: 5px;
+  z-index: 1;
+}
+
+footer.border-top.text-muted {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

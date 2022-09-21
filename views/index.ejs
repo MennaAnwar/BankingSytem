@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link href="img/logo.png" rel="icon">
+  <link href="img/logo.png" rel="apple-touch-icon">
+
+  <title>Clients</title>
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="css/global.css" rel="stylesheet">
+  <link href="css/animations.css" rel="stylesheet">
+
+  <link href="css/page1.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light header">
+    <div class="container-fluid">
+      <a class="px-3 navbar-brand special-font" href="#">
+        <img src="img/logo.png" class="d-inline-block logo" alt="">
+        BM BANK
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav text-center">
+          <ul class="snip1211 mb-0">
+            <li class="current"><a class="nav-link" aria-current="page" href="#" onclick="active(this)">Home</a></li>
+            <li> <a class="nav-link" href="#clients" onclick="active(this)">Clients</a>
+            </li>
+            <li> <a class="nav-link" href="#History" onclick="active(this)">Transaction History</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="alert mt-3 alert-danger" role="alert" style="display:none" id="amountAlert">
+    <p style="text-align: center; font-weight: bold; margin: 0;"><i class="bi bi-bug-fill"></i>
+        Invalid amount. TRY Again</p>
+</div>
+<div class="alert mt-3 alert-danger" style="display:none" role="alert" id="loginAlert">
+  <p style="text-align: center; font-weight: bold; margin: 0;"><i class="bi bi-bug-fill"></i> You can't transfer money for the same customer  </p>
+</div>
+<div class="alert mt-3 alert-success fade show" style="display:none" role="alert" id="successAlert">
+  <p style="text-align: center; font-weight: bold; margin: 0;"><i class="bi bi-patch-check-fill"></i>
+      Money Transfer Successfully   </p>
+</div>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center hero">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 class="special-font">Welcome to <span id="bank">BM BANK<span id="line"></span></span>
+          </h1>
+          <p class='sub-heading special-font'>Serving clients is our priority</p>
+          <!-- <div><a href="courses-dashboard" class="btn-get-started btn-primary">Upload Your Content</a></div> -->
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img position-relative">
+          <img src="img/welcome.png" class="welcome up-down">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <div id="clients" class="p-5">
+    <h2 class="text-center special-font">Clients</h2>
+    <table class="table table-hover  animate one fadeInUp text-center">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">#</th>
+          <th scope="col">Client Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Balance</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% customers.forEach((item,index) => { %>
+          <tr>
+            <th scope="row"><%= index+1 %></th>
+            <td class="client-name"><a style="text-decoration: none; color:#000"> <%= item.name %> </a> </td>
+            <td class="client-name"> <%= item.email %> </td>
+            <td class="text-center"> <%= item.balance %> $</td>
+            <td class="text-center view special-font"><a href='./index/<%= item.id %>' class="view special-font" style="text-decoration: none;">Transfer</a></td>
+          </tr>
+       <% }); %>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div id="History" class="p-5">
+    <h2 class="text-center special-font">Transaction History</h2>
+    <div class="table-scroll">
+    <table class="table table-hover  animate one fadeInUp">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">#</th>
+          <th scope="col">Client Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Balance</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% history.forEach((item,index)=> { %>
+          <tr>
+            <th scope="row">
+              <%= index+1 %>
+            </th>
+              <td class="client-name">
+                  <a>
+                      <%= item.cust1 %>
+                  </a>
+              </td>
+              <td class="client-name">
+                  <a>
+                      <%= item.cust2 %></a>
+              </td>
+              <td class="text-center client-name">
+                  <%= item.amount%> $
+              </td>
+              
+          </tr>
+          <% }); %>
+        
+        
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <footer class="border-top text-muted text-center">
+    <span>© 2022 <span class="special-font">BM Bank</span></span>
+    <span>Designed by <span class="special-font">BM BANK Software Team</span></span>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-3.6.0.min.js"></script>
+  <script src="js/page1.js"></script>
+
+</body>
+
+</html>
