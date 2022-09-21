@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'rancho';
+  src: URL('../vendor/fonts/rancho.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'acme';
+  src: URL('../vendor/fonts/acme.ttf') format('truetype');
+}
+
+/*--------------------------------------------------------------
+  # General
+  --------------------------------------------------------------*/
+:root {
+  --main-font: "roboto";
+  --secondary-font: "acme";
+  --special-font: "rancho";
+}
+
+:root,
+:root.light {
+  --bg-color: #3184bd;
+  --text-color: #f0edfe;
+  --footer-color: rgb(37 43 66);
+  --content-color: #4991db;
+  --header-text-color: #2d6781;
+  --special-card: #4991db;
+  --subheading: #f1eeff;
+  --chat-bg: #f9f9f9;
+  --chat-bubble: #49b5e7;
+  --chat-bg: url(../../assets/img/chat-light-mode.jpg);
+}
+
+:root.dark {
+  --bg-color: #233446;
+  --text-color: #f9f9f9;
+  --footer-color: rgb(37 43 66);
+  --content-color: #f9f9f9;
+  --header-text-color: #bfd9f2;
+  --special-card: #233446;
+  --subheading: #f9f9f9;
+  --chat-bg: #354556;
+  --chat-bubble: #f9f9f9;
+  --chat-bg: url(../../assets/img/chat-dark-mode.jfif);
+}
+
+.special-font {
+  font-family: var(--secondary-font);
+  letter-spacing: 1px !important;
+  font-weight: 500;
+}
+
+.header {
+  position: sticky;
+  background: #f0edfe;
+  opacity: 0.9;
+  top: 0;
+  transition: all 0.5s;
+  display: flex;
+  padding: 1vh 5vw;
+  box-shadow: 0px 5px 15px 0px rgb(0 0 0 / 5%);
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.navbar-light .navbar-brand {
+  color: rgb(26 118 182);
+  font-size: 25px;
+}
+
+header a {
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.snip1211 {
+  font-family: 'Raleway', Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.snip1211 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1211 li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1.5em;
+  padding: 0;
+}
+.snip1211 a {
+  padding: 0.4em 0;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+.snip1211 a:before {
+  position: absolute;
+  content: '';
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  opacity: 0;
+  top: 25%;
+  bottom: 25%;
+  left: 0;
+  right: 0;
+  border-top: 3px solid rgb(243 121 60);
+  border-bottom: 3px solid rgb(243 121 60);
+}
+.snip1211 a:hover,
+.snip1211 .current a {
+  color: #ffffff;
+  font-weight: bolder;
+
+}
+.snip1211 a:hover:before,
+.snip1211 .current a:before {
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+}
+
+.card{
+  border: none;
+}
+.logo {
+  height: auto;
+  width: 50px;
+}
