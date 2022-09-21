@@ -1,4 +1,4 @@
-# Banky Website
+# BM Bank Website
 ## Basic Bank System For The Spark Foundation GRIP 
 ##### Develop By Menna Mohamed
 
@@ -27,12 +27,12 @@ Banky is a simple dynamic website which has the following specs.
 
 ## ✨ Installation
 
-Banky requires [Node.js](https://nodejs.org/) v10+ to run.
+BM Bank requires [Node.js](https://nodejs.org/) v10+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-cd Banky-Website
+cd BankingSytem
 npm i
 npm run watch
 ```
